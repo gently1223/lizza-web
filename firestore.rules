@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    match /instaUsers/{userId} {
+      // You'll probably want to add security rules around the user document
+      // itself. For now, though, let's look at our subcollections:
+      allow read, write: if request.auth.uid == userId;
+      match /private/{anything=**} {
+        // Only the user can read documents in their private collection
+        allow read, write: if request.auth.uid == userId;
+      }
+
+      match /public/{anything=**} {
+        // Anybody can read documents here, as long as they're signed in
+        allow read: if request.auth != null;
+      }
+      match /catalogue/{anything=**} {
+        allow read, write: if request.auth.uid == userId;
+        allow read: if request.auth != null;
+      }
+
+    }
+    match /payments/{payment_id} {
+      allow read: if request.auth != null;
+    }
+    match /products/{product_id} {
+      allow read: if request.auth.uid != null
+    }
+  }
+  match /{path=**}/public/{linkId} {
+    allow read: if request.auth != null;
+  }
+
+}

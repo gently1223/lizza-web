@@ -1,0 +1,43 @@
+/functions/tonyvazgar/
+/public/*
+.DS_Store
+.vscode/*
+.thumbs.db
+node_modules
+.env
+.firebase
+# Quasar core related directories
+.quasar
+/dist
+
+# Cordova related directories and files
+/src-cordova/node_modules
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+
+# Capacitor related directories and files
+/src-capacitor/www
+/src-capacitor/node_modules
+
+# BEX related directories and files
+/src-bex/www
+/src-bex/js/core
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Firebase emulator files
+firestore-debug.log
+pubsub-debug.log
+ui-debug.log
