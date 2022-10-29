@@ -16,8 +16,8 @@
       </div>
   </q-modal> 
 
-  <q-page v-if="!showStory">
-    <div class="card-section">
+  <q-page v-if="!showStory" class="content">
+    <div class="card-section desktop-view">
       <div class="justify-center q-mx-md card1" style="background: #fff; display: flex; flex-direction: row; justify-content: space-between; height: auto!important; padding: 16px!important">
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;padding: 10px">
           <q-toolbar-title>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="card-section">
+    <div class="card-section desktop-view">
       <div class="justify-center q-mx-md card1" style="background: #fff; display: flex; flex-direction: row; justify-content: space-between; height: auto!important; padding: 16px!important">
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;padding: 10px">
           <q-toolbar-title>
@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <div class="card-section">
+    <div class="card-section desktop-view">
       <div class="justify-center q-mx-md card1" style="background: #fff; display: flex; flex-direction: row; justify-content: space-between; height: auto!important; padding: 16px!important">
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;padding: 10px">
           <q-toolbar-title>
@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <div class="card-section">
+    <div class="card-section desktop-view">
       <div class="justify-center q-mx-md card1" style="background: #fff; display: flex; flex-direction: row; justify-content: space-between; height: auto!important; padding: 16px!important">
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;padding: 10px">
           <q-toolbar-title>
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <div class="card-section">
+    <div class="card-section desktop-view">
       <div class="justify-center q-mx-md card1" style="background: #fff; display: flex; flex-direction: row; justify-content: space-between; height: auto!important; padding: 16px!important">
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;padding: 10px">
           <q-toolbar-title>
@@ -107,7 +107,7 @@
       </div>
     </div>
 
-    <div class="card-section">
+    <div class="card-section desktop-view">
       <div class="justify-center q-mx-md card1" style="background: #fff; display: flex; flex-direction: row; justify-content: space-between; height: auto!important; padding: 16px!important">
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;padding: 10px">
           <q-toolbar-title>
@@ -124,7 +124,145 @@
         </q-btn>
       </div>
     </div>
+
+    <!-- Mobile -->
+
+  <q-toolbar class="shadow-1 mobile-view">
+    <div class="socialmedia">
+      <div
+        class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0"
+      >
+        <div
+          class="flex flex-col lg:flex-row items-center mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6 "
+        >
+          <div class="circle cursor-pointer"
+              role="button"
+              @click="toggleStory('videos/dashboard4.mov')">
+              <img src="/images/highlight-4.svg" class="socialimg" />      
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0"
+      >
+        <div
+          class="flex flex-col lg:flex-row items-center mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6 "
+        >
+          <div class="circle cursor-pointer"
+              role="button"
+              @click="toggleStory('videos/dashboard3.mov')">
+              <img src="/images/highlight-3.svg" class="socialimg" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0"
+      >
+          <div
+            class="flex flex-col lg:flex-row items-center mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6 "
+          >
+            <div class="circle cursor-pointer"
+                role="button"
+                @click="toggleStory('videos/dashboard2.mov')">
+                <img src="/images/highlight-2.svg" class="socialimg"
+                />
+            </div>
+          </div>
+      </div>
+
+      <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
+          <div
+            class="flex flex-col lg:flex-row items-center mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6 "
+          >
+            <div 
+              class="circle cursor-pointer"
+              role="button"
+              @click="toggleStory('videos/dashboard1.mov')"
+            >
+              <img src="/images/highlight-1.svg" class="socialimg" />   
+            </div>
+          </div>
+      </div>
+    </div>
+  
+  </q-toolbar>
+
+  <q-separator class="separador mobile-view" color="1px solid #DDDDDD" style="display:flex;margin: 0 auto;width:720px;justify-content:center;align-items:center;" inset />
+
+  <div class="card-section mobile-view">
+    <div class=" q-mx-md card1" style="background: #fff">
+      <div class="image">
+        <q-img src="images/M001-31.JPG" class="images"></q-img>
+      </div>
+      <div class="card-section2">
+        <h3 class="text1" >Las tiendas con más de 5 productos venden 50% más</h3>
+        <q-btn
+          class="full-width"
+          dense
+          color="primary"
+          label="Crear un producto"
+          @click="goToProduct"
+        > 
+        </q-btn>
+        <br/>
+        <a href="https://api.whatsapp.com/send?phone=5215584817757&text=Hola%20%F0%9F%98%8A%20%C2%BFC%C3%B3mo%20puedo%20tener%20mi%20tienda%20en%20l%C3%ADnea%20gratis%3F" target="_blank">
+          <p class="para1">¿Necesitas ayuda? </p>
+
+        </a>
+      </div>
+    </div>
+    <div class="justify-center q-mx-md card1" style="background: #fff">
+      <a href="#" class="close-icon"><img   src="sidebar/close.svg" /> </a>
+      <q-toolbar-title style="height: 30px !important;padding: 0px !important;">
+        <span  class="text-primary title-text" >
+          ¡Abre tu tienda al público!
+        </span>
+        <p class="text2" >
+          Copia el link en tu bio de Instagram para vender más💸
+        </p>
+      </q-toolbar-title>
+      <q-input  
+        class="input-2 input-area" 
+        readonly 
+        color="primary"
+        v-model="productlink"
+      >
+        <template v-slot:prepend>
+          <div class="copy" @click="showNotif">
+            <q-icon color="primary" style="padding-left:20px; cursor:pointer" @click="handleClipboard()"  >
+              <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.1721 5.40039H2.87202C2.37654 5.40144 1.90161 5.59846 1.55088 5.94844C1.20015 6.29842 1.00211 6.77294 1 7.26841V23.1246C0.999999 23.6214 1.1971 24.098 1.54806 24.4497C1.89902 24.8014 2.37516 24.9995 2.87202 25.0006H14.1721C14.6697 25.0006 15.1469 24.803 15.4987 24.4511C15.8505 24.0993 16.0482 23.6221 16.0482 23.1246V7.26841C16.046 6.77225 15.8475 6.29713 15.4959 5.94703C15.1443 5.59694 14.6683 5.40039 14.1721 5.40039ZM15.2482 23.1326C15.246 23.4166 15.1317 23.6882 14.9302 23.8883C14.7286 24.0883 14.4561 24.2006 14.1721 24.2006H2.87202C2.58734 24.1995 2.31468 24.0857 2.11375 23.884C1.91282 23.6824 1.80001 23.4093 1.80001 23.1246V7.26841C1.80211 6.98511 1.91586 6.71408 2.11656 6.51413C2.31726 6.31418 2.58872 6.20144 2.87202 6.2004H14.1721C14.4575 6.2004 14.7312 6.31376 14.933 6.51556C15.1348 6.71735 15.2482 6.99104 15.2482 7.27641V23.1326Z" fill="#DDDDDD" stroke="#E75935"/>
+                <path d="M18.6162 1H7.22411C6.73892 0.999999 6.27354 1.19247 5.93009 1.53517C5.58663 1.87788 5.39315 2.34283 5.39209 2.82802V4.24804C5.39209 4.35412 5.43423 4.45587 5.50925 4.53088C5.58426 4.6059 5.68601 4.64804 5.79209 4.64804C5.89818 4.64804 5.99992 4.6059 6.07494 4.53088C6.14995 4.45587 6.1921 4.35412 6.1921 4.24804V2.82802C6.19316 2.55501 6.30235 2.29354 6.49578 2.10086C6.6892 1.90819 6.95109 1.80001 7.22411 1.80001H18.6162C18.8882 1.80107 19.1486 1.90984 19.3406 2.10252C19.5325 2.29519 19.6402 2.55607 19.6402 2.82802V18.7762C19.6381 19.0471 19.5296 19.3064 19.338 19.498C19.1464 19.6896 18.8872 19.7981 18.6162 19.8002H17.3202C17.2141 19.8002 17.1124 19.8423 17.0374 19.9174C16.9624 19.9924 16.9202 20.0941 16.9202 20.2002C16.9202 20.3063 16.9624 20.408 17.0374 20.4831C17.1124 20.5581 17.2141 20.6002 17.3202 20.6002H18.6162C19.1014 20.5992 19.5664 20.4057 19.9091 20.0622C20.2518 19.7188 20.4443 19.2534 20.4442 18.7682V2.82802C20.4442 2.3432 20.2517 1.87823 19.9088 1.53541C19.566 1.19259 19.1011 1 18.6162 1Z" fill="#DDDDDD" stroke="#E75935"/>
+              </svg>
+            </q-icon>
+            <span style="padding: 0px 10px;">|</span>
+          </div>
+        </template>
+      </q-input>
+    </div>
+    <div class=" q-mx-md card1 card12" style="background: #fff">
+      <div class="image">
+        <q-img src="images/M001-8.png" class="images"></q-img>
+      </div>
+      <div class="card-section2">
+        <h3 class="text2" >Queremos mejorar para ti</h3>
+      
+        <q-btn
+          class="full-width"
+          dense
+          color="primary"
+          label="Ir a la encuesta"
+          @click="goToTypeform('https://form.typeform.com/to/L7XtS55V')"
+        > 
+        </q-btn>
+      </div>
+    </div>
+  </div>
+  <!-- End Mobile -->
   </q-page>
+
   <div>
       <Pwa-Menu></Pwa-Menu>
   </div> 
@@ -259,8 +397,6 @@ justify-content: space-between;
 align-items: center;
 padding: 24px;
 gap: 24px;
-width: 720px;
-height: 168px;
 background: #FFFFFF;
 box-shadow: none;
 position: relative;
@@ -272,11 +408,9 @@ position: relative;
   height: 100vh;
 }
 .socialmedia {
-  width: 100%;
+  width: 100%!important;
   display: flex;
   justify-content: space-between;
-  padding: 0px 50px;
-  margin-top: 60px;
 }
 .text-center {
     position: absolute;
@@ -285,11 +419,11 @@ position: relative;
 span{
    margin-bottom: 4px;
 }
-.input-1 {
+.input-2 {
     display:flex; 
     position: relative;
-    width: 672px;
-    height: 54px;
+    width: 100%;
+    height: 48px;
     background: #FFFFFF;
     align-content: center;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
@@ -297,10 +431,10 @@ span{
     overflow: hidden;
     color: #434343;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
-   
+    font-size: 16px;
+    line-height: 24px;  
 }
+
  .input-area {
     color: #E75935 !important;
     font-weight: 600;
@@ -340,8 +474,8 @@ span{
 }
 
 .socialimg {
-  width: 76px;
-  height:76px;
+  width: 100px;
+  height:100px;
   border-radius: 50%;
 }
 .circle {
@@ -386,17 +520,17 @@ span{
 }
 
 .card-section2 {
-   position: absolute;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   align-content: center;
-   margin-left: 210px;
-   width: 335px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  margin-left: 210px;
+  width: -webkit-fill-available;
    
    .text1 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.8vw;
     line-height: 25px;
     color: #001E32;
     white-space: nowrap;
@@ -533,7 +667,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 18px;
 line-height: 16px;
-left: 80px;
 }
 
 h3 {
@@ -730,9 +863,8 @@ p.text2 {
 
 
 @media (max-width: 600px) {
-  .shadow-1 {
-    width: 335px;
-    height: 132px;
+  .card-section2 {
+    margin-left: 150px;
   }
   .text-center {
     font-size: 20px;
@@ -753,21 +885,14 @@ p.text2 {
     font-size: 12px;
     line-height: 16px;
 }
-
-
-
-  .socialmedia {
-    padding: 0px 10px;
-    margin-top:40px;
-  }
   .socialimg {
-    width: 46px;
-    height: 46px;
+    width: 66px;
+    height: 66px;
   }
   .circle {
-  width: 56px;
-  height:56px;
-}
+    width: 66px;
+    height:66px;
+  }
   span.title-text {
     width: 179px;
     font-family: 'Manrope';
@@ -856,9 +981,6 @@ p.text2 {
     
 }
 .card-section2 {
-   margin-left: 130px;
-   width: 169px;
-
     .text1{
     font-size: 12px;
     white-space:normal !important;
@@ -996,6 +1118,28 @@ font-size: 18px;
 @media (max-width: 900px) {
   .card-section {
     margin-left: 20px;
+  }
+}
+
+@media (min-width: 901px) {
+  .desktop-view {
+    display: block;
+  }
+  .mobile-view {
+    display: none;
+  }
+  .content {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+}
+
+@media (max-width: 900px) {
+  .desktop-view {
+    display: none;
+  }
+  .mobile-view {
+    display: block;
   }
 }
 </style>

@@ -72,7 +72,7 @@
   <!-- Mobile -->
   <q-header elevated style="background-color: #ffffff; padding: 20px;" class="mobile-header">
     <q-toolbar>
-      <p class="text-h4 text-weight-bold" style="margin: 0px; algin-items: center; color: black!important;">The Skin Lab</p>
+      <p class="text-h4 text-weight-bold page-title">The Skin Lab</p>
       <q-space />
       <q-tabs class="nav-right-icons">
         <q-btn color="white" text-color="black" size="18px" round icon="message">
@@ -96,47 +96,17 @@
     </q-toolbar>
 </q-header>
 
-<div v-show="isSidebar" class="sidebar mobile-sidebar">
-  <div class="my-scroll">
-    <p class="nav-list" style="margin-bottom: 10px!important;">
-      <span  class="text-dark text-h5">
-        The Skin Lab
-      </span>
-    </p>
-    <q-input  class="input-1 input-area" readonly
-              v-model="productlink">
-                <template v-slot:prepend style="border-right: 3px solid grey">
-                  <div class="copy" @click="showNotif">
-                      <q-icon color="primary" style="padding-left:20px; padding-bottom: 10px; cursor:pointer" @click="handleClipboard()"  >
-                        <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M14.1721 5.40039H2.87202C2.37654 5.40144 1.90161 5.59846 1.55088 5.94844C1.20015 6.29842 1.00211 6.77294 1 7.26841V23.1246C0.999999 23.6214 1.1971 24.098 1.54806 24.4497C1.89902 24.8014 2.37516 24.9995 2.87202 25.0006H14.1721C14.6697 25.0006 15.1469 24.803 15.4987 24.4511C15.8505 24.0993 16.0482 23.6221 16.0482 23.1246V7.26841C16.046 6.77225 15.8475 6.29713 15.4959 5.94703C15.1443 5.59694 14.6683 5.40039 14.1721 5.40039ZM15.2482 23.1326C15.246 23.4166 15.1317 23.6882 14.9302 23.8883C14.7286 24.0883 14.4561 24.2006 14.1721 24.2006H2.87202C2.58734 24.1995 2.31468 24.0857 2.11375 23.884C1.91282 23.6824 1.80001 23.4093 1.80001 23.1246V7.26841C1.80211 6.98511 1.91586 6.71408 2.11656 6.51413C2.31726 6.31418 2.58872 6.20144 2.87202 6.2004H14.1721C14.4575 6.2004 14.7312 6.31376 14.933 6.51556C15.1348 6.71735 15.2482 6.99104 15.2482 7.27641V23.1326Z" fill="#DDDDDD" stroke="#E75935"/>
-                          <path d="M18.6162 1H7.22411C6.73892 0.999999 6.27354 1.19247 5.93009 1.53517C5.58663 1.87788 5.39315 2.34283 5.39209 2.82802V4.24804C5.39209 4.35412 5.43423 4.45587 5.50925 4.53088C5.58426 4.6059 5.68601 4.64804 5.79209 4.64804C5.89818 4.64804 5.99992 4.6059 6.07494 4.53088C6.14995 4.45587 6.1921 4.35412 6.1921 4.24804V2.82802C6.19316 2.55501 6.30235 2.29354 6.49578 2.10086C6.6892 1.90819 6.95109 1.80001 7.22411 1.80001H18.6162C18.8882 1.80107 19.1486 1.90984 19.3406 2.10252C19.5325 2.29519 19.6402 2.55607 19.6402 2.82802V18.7762C19.6381 19.0471 19.5296 19.3064 19.338 19.498C19.1464 19.6896 18.8872 19.7981 18.6162 19.8002H17.3202C17.2141 19.8002 17.1124 19.8423 17.0374 19.9174C16.9624 19.9924 16.9202 20.0941 16.9202 20.2002C16.9202 20.3063 16.9624 20.408 17.0374 20.4831C17.1124 20.5581 17.2141 20.6002 17.3202 20.6002H18.6162C19.1014 20.5992 19.5664 20.4057 19.9091 20.0622C20.2518 19.7188 20.4443 19.2534 20.4442 18.7682V2.82802C20.4442 2.3432 20.2517 1.87823 19.9088 1.53541C19.566 1.19259 19.1011 1 18.6162 1Z" fill="#DDDDDD" stroke="#E75935"/>
-                        </svg>
-                      </q-icon>
-                  </div>
-                </template>
-    </q-input>
-    <q-separator />
-    <ul class="nav-list">
-      <span v-for="(menuItem, index) in menuItems" :key="index">
-        <li>
-          <a :href="menuItem.link">
+<div class="footer">
+  <q-footer reveal style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+    <q-toolbar class="row justify-between">
+      <div v-for="(menuItem, index) in menuItems" :key="index" class="footer-items">
+          <a v-if="index < 5" :href="menuItem.link">
             <img class="menu_icon" :src="menuItem.icon" />
-            <span class="links_name">{{ menuItem.name }}</span>
+            <div class="links_name">{{ menuItem.mobile_name }}</div>
           </a>
-        </li>
-        <li v-if="index == 4 || index == 6" class="divider"></li>
-      </span>
-       <span >
-        <li>
-           <a  @click="logout" style="cursor: pointer;">
-            <img class="menu_icon" src='sidebar/logout.svg' />
-            <span class="links_name"> Cerrar sesión </span>
-            </a>
-        </li>
-      </span>
-    </ul>
-  </div>
+      </div>
+    </q-toolbar>
+  </q-footer>
 </div>
 
 </template>
@@ -173,35 +143,32 @@ export default defineComponent({
         {
           link: '/dashboard',
           name: 'Mi espacio',
+          mobile_name: 'Inicio',
           icon: 'sidebar/house.svg',
         },
         {
           link: '/',
           name: 'Mis productos',
+          mobile_name: 'Productos',
           icon: 'sidebar/shop-alt.svg',
         },
         {
           link: '/payments',
           name: 'Mis ventas',
+          mobile_name: 'Ventas',
           icon: 'sidebar/dollar.svg',
+        },
+        {
+          link: '/',
+          mobile_name: 'Envios',
+          icon: 'sidebar/truck.svg',  
         },
          {
           link: '/settings',
           name: 'Mi cuenta',
+          mobile_name: 'Cuenta',
           icon: 'sidebar/user-circle.svg',
         },
-        // {
-        //   link: '/event',
-        //   name: 'Event',
-        //   icon: 'sidebar/refresh.svg',
-        // },
-        // {
-
-        //   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        //   link: `https://web.lizzapp.com/${user.value?.username}`,
-        //   name: 'Usar como comprador',
-        //   icon: 'sidebar/refresh.svg',
-        // },
         {
           link: 'https://lizzapp.com/index.php/condiciones-de-uso/',
           name: 'Términos y Condiciones',
@@ -322,13 +289,10 @@ export default defineComponent({
   data() {
     return {
       isOpened: false,
-      isSidebar: false,
     }
   },
   methods: {
-    showSidebar() {
-      this.isSidebar = !this.isSidebar
-    }
+
   }
 }
 );
@@ -364,7 +328,7 @@ body {
 }
 .sidebar-main {
   width: 100%;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   height: 100%;
@@ -471,12 +435,20 @@ div.nav-right-icons p {
   border-radius: 50%;
   color: white;
 }
+.page-title {
+  margin: 0px; 
+  align-items: center; 
+  color: black!important;
+}
 
 @media (min-width: 901px) {
   .mobile-header {
     display: none;
   }
   .mobile-sidebar {
+    display: none;
+  }
+  .footer {
     display: none;
   }
 }
@@ -491,6 +463,47 @@ div.nav-right-icons p {
   .mobile-sidebar {
     display: block;
   }
+  .footer {
+    display: block;
+  }
+  @media (max-width: 568px) {
+    .page-title {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.mobile-header {
+  position: fixed;
+}
+.q-footer {
+  background-color: white;
+  padding: 16px;
+}
+
+.footer-items:nth-child(n+6) {
+  display: none;
+}
+
+.footer-items a{
+  width: 24px;
+  height: 24px;
+  filter: invert(23%) sepia(7%) saturate(12%) hue-rotate(354deg) brightness(92%) contrast(84%);
+  transition: all 0.4s ease;
+}
+
+.footer-items a img {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+
+.footer-items a {
+  text-decoration: none;
+}
+
+.footer-items a:hover {
+  filter: invert(41%) sepia(53%) saturate(2676%) hue-rotate(343deg) brightness(97%) contrast(86%);
 }
 
 </style>
