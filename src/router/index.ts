@@ -34,6 +34,7 @@ export default route<StateInterface>(function (/* { store, ssrContext } */) {
     history: createHistory(
       process.env.MODE === 'ssr' ? void 0 : process.env.VUE_ROUTER_BASE
     ),
+    linkActiveClass: 'lizza-active-link'
   });
   Router.afterEach((to, from) => {
     document.title = to.name?.toString() || 'Lizza';

@@ -100,10 +100,10 @@
   <q-footer reveal style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
     <q-toolbar class="row justify-between">
       <div v-for="(menuItem, index) in menuItems" :key="index" class="footer-items">
-          <a v-if="index < 5" :href="menuItem.link">
+          <router-link v-if="index < 5" :to="menuItem.link">
             <img class="menu_icon" :src="menuItem.icon" />
             <div class="links_name">{{ menuItem.mobile_name }}</div>
-          </a>
+          </router-link>
       </div>
     </q-toolbar>
   </q-footer>
@@ -147,7 +147,7 @@ export default defineComponent({
           icon: 'sidebar/house.svg',
         },
         {
-          link: '/',
+          link: '/product',
           name: 'Mis productos',
           mobile_name: 'Productos',
           icon: 'sidebar/shop-alt.svg',
@@ -159,7 +159,7 @@ export default defineComponent({
           icon: 'sidebar/dollar.svg',
         },
         {
-          link: '/',
+          link: '/product',
           mobile_name: 'Envios',
           icon: 'sidebar/truck.svg',  
         },
@@ -488,7 +488,7 @@ div.nav-right-icons p {
 .footer-items a{
   width: 24px;
   height: 24px;
-  filter: invert(23%) sepia(7%) saturate(12%) hue-rotate(354deg) brightness(92%) contrast(84%);
+  text-decoration: none;
   transition: all 0.4s ease;
 }
 

@@ -8,3 +8,11 @@ body {
 .sidebar-main {
   overflow-y: hidden !important;
 }
+
+.lizza-active-link {
+  filter: invert(41%) sepia(53%) saturate(2676%) hue-rotate(343deg) brightness(97%) contrast(86%);
+}
+
+.lizza-active-link img {
+  filter: invert(41%) sepia(53%) saturate(2676%) hue-rotate(343deg) brightness(97%) contrast(86%);
+}
