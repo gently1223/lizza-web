@@ -80,7 +80,7 @@
     
     </q-toolbar>
 
-     <div class="card-section desktop-view">
+    <div class="card-section desktop-view">
       <div class=" q-mx-md card1" style="background: #fff">
         <div class="image">
           <q-img src="images/M001-31.JPG" class="images"></q-img>
@@ -151,7 +151,7 @@
         </div>
       </div>
 
-     </div>
+    </div>
  
      <!-- Mobile -->
  
@@ -511,7 +511,6 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   
  }
  
  

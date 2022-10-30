@@ -1,6 +1,5 @@
 <template>
   <!-- Desktop -->
-  <div class="sidebar-main open" >
     <q-header elevated style="background-color: #e75935; padding: 20px;" class="header">
         <q-toolbar>
           <img class="menu_icon_header" src='icons/lizza_logo.png' />
@@ -67,7 +66,6 @@
         </ul>
       </div>
     </div>
-  </div>
 
   <!-- Mobile -->
   <q-header elevated style="background-color: #ffffff; padding: 20px;" class="mobile-header">
@@ -317,7 +315,6 @@ body {
     left: 0px;
     top: 100px;
     background: #FFFFFF;
-    z-index: 99;
     transition: all 0.5s ease;
     padding: 30px;
     box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.15);
@@ -325,30 +322,6 @@ body {
 .mobile-sidebar {
   right: 0px!important;
   left: auto!important;
-}
-.sidebar-main {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  transform: scale(0);
-  overflow-y: scroll;
-}
-.sidebar-main.open {
-  transform: scale(1);
-}
-.menu-icon {
-  position: absolute;
-  top: 35px;
-  right: 60px;
-}
-.menu-icon img {
-  filter: invert(23%) sepia(7%) saturate(12%) hue-rotate(354deg) brightness(92%) contrast(84%);
-  transition: all 0.4s ease;
-}
-.menu-icon img:hover {
-  filter: invert(41%) sepia(53%) saturate(2676%) hue-rotate(343deg) brightness(97%) contrast(86%);
 }
 .sidebar .nav-list {
   margin: 0;
@@ -393,7 +366,8 @@ body {
 }
 
 .header {
-   height: 100px; 
+   height: 100px;
+   position: fixed;
 }
 .menu_icon_header {
   width: 150px;
@@ -454,13 +428,10 @@ div.nav-right-icons p {
 }
 
 @media (max-width: 900px) {
-  .sidebar-main {
+  .sidebar {
     display: none;
   }
   .mobile-header {
-    display: block;
-  }
-  .mobile-sidebar {
     display: block;
   }
   .footer {
